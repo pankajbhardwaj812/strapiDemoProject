@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resas",
+  "info": {
+    "singularName": "resa",
+    "pluralName": "resas",
+    "displayName": "Restaurant "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}
