@@ -4,7 +4,8 @@
   "info": {
     "singularName": "car",
     "pluralName": "cars",
-    "displayName": "Car"
+    "displayName": "Car",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,8 +15,18 @@
     "Name": {
       "type": "string"
     },
-    "email": {
-      "type": "email"
+    "Description": {
+      "type": "string"
+    },
+    "mobile": {
+      "unique": true,
+      "required": true,
+      "type": "biginteger"
+    },
+    "CarNo": {
+      "type": "string",
+      "maxLength": 10,
+      "required": true
     }
   }
 }

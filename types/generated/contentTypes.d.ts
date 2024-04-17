@@ -794,13 +794,20 @@ export interface ApiCarCar extends Schema.CollectionType {
     singularName: 'car';
     pluralName: 'cars';
     displayName: 'Car';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Name: Attribute.String;
-    email: Attribute.Email;
+    Description: Attribute.String;
+    mobile: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    CarNo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 10;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
