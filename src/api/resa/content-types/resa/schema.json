@@ -4,11 +4,37 @@
   "info": {
     "singularName": "resa",
     "pluralName": "resas",
-    "displayName": "Restaurant "
+    "displayName": "Restaurant ",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Restaurantno": {
+      "type": "integer",
+      "unique": true,
+      "min": 8,
+      "max": 12
+    },
+    "Restaurantimg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    }
+  }
 }

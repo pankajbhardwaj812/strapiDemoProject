@@ -802,12 +802,22 @@ export interface ApiCarCar extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     Description: Attribute.String;
-    mobile: Attribute.BigInteger & Attribute.Required & Attribute.Unique;
+    mobile: Attribute.Integer &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMax<
+        {
+          min: 9;
+          max: 12;
+        },
+        number
+      >;
     CarNo: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 10;
       }>;
+    Carimg: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -824,12 +834,22 @@ export interface ApiHotelHotel extends Schema.CollectionType {
     singularName: 'hotel';
     pluralName: 'hotels';
     displayName: 'Hotel';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Name: Attribute.String & Attribute.Required & Attribute.Unique;
+    About: Attribute.String;
+    Number: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        minLength: 8;
+        maxLength: 12;
+      }>;
+    Hotelimg: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -854,11 +874,24 @@ export interface ApiResaResa extends Schema.CollectionType {
     singularName: 'resa';
     pluralName: 'resas';
     displayName: 'Restaurant ';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    Name: Attribute.String;
+    Restaurantno: Attribute.Integer &
+      Attribute.Unique &
+      Attribute.SetMinMax<
+        {
+          min: 8;
+          max: 12;
+        },
+        number
+      >;
+    Restaurantimg: Attribute.Media & Attribute.Required;
+    Description: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

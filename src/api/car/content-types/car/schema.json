@@ -21,11 +21,24 @@
     "mobile": {
       "unique": true,
       "required": true,
-      "type": "biginteger"
+      "type": "integer",
+      "min": 9,
+      "max": 12
     },
     "CarNo": {
       "type": "string",
       "maxLength": 10,
+      "required": true
+    },
+    "Carimg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
       "required": true
     }
   }
