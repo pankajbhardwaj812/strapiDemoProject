@@ -808,6 +808,7 @@ export interface ApiCarCar extends Schema.CollectionType {
         maxLength: 10;
       }>;
     Carimg: Attribute.Media & Attribute.Required;
+    Type: Attribute.Enumeration<['Sedan ', 'Hatchback', 'Suv']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -33,6 +33,14 @@
         "videos",
         "audios"
       ]
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Sedan ",
+        "Hatchback",
+        "Suv"
+      ]
     }
   }
 }
