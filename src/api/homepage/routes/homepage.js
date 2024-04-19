@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * single-type router
+ * homepage router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::single-type.single-type');
+module.exports = createCoreRouter('api::homepage.homepage');
