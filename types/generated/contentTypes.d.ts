@@ -802,16 +802,6 @@ export interface ApiCarCar extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     Description: Attribute.String;
-    mobile: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetMinMax<
-        {
-          min: '9';
-          max: '13';
-        },
-        string
-      >;
     CarNo: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{

@@ -18,13 +18,6 @@
     "Description": {
       "type": "string"
     },
-    "mobile": {
-      "unique": true,
-      "required": true,
-      "type": "biginteger",
-      "max": "13",
-      "min": "9"
-    },
     "CarNo": {
       "type": "string",
       "maxLength": 10,
