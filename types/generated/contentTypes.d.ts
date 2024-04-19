@@ -802,15 +802,15 @@ export interface ApiCarCar extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     Description: Attribute.String;
-    mobile: Attribute.Integer &
+    mobile: Attribute.BigInteger &
       Attribute.Required &
       Attribute.Unique &
       Attribute.SetMinMax<
         {
-          min: 9;
-          max: 12;
+          min: '9';
+          max: '13';
         },
-        number
+        string
       >;
     CarNo: Attribute.String &
       Attribute.Required &
@@ -842,13 +842,6 @@ export interface ApiHotelHotel extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String & Attribute.Required & Attribute.Unique;
     About: Attribute.String;
-    Number: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetMinMaxLength<{
-        minLength: 8;
-        maxLength: 12;
-      }>;
     Hotelimg: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -881,15 +874,7 @@ export interface ApiResaResa extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    Restaurantno: Attribute.Integer &
-      Attribute.Unique &
-      Attribute.SetMinMax<
-        {
-          min: 8;
-          max: 12;
-        },
-        number
-      >;
+    Restaurantno: Attribute.BigInteger & Attribute.Unique;
     Restaurantimg: Attribute.Media & Attribute.Required;
     Description: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
@@ -898,6 +883,42 @@ export interface ApiResaResa extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::resa.resa', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::resa.resa', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSingleTypeSingleType extends Schema.SingleType {
+  collectionName: 'single_types';
+  info: {
+    singularName: 'single-type';
+    pluralName: 'single-types';
+    displayName: 'SingleType';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    Password: Attribute.Password &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 8;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::single-type.single-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::single-type.single-type',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -923,6 +944,7 @@ declare module '@strapi/types' {
       'api::car.car': ApiCarCar;
       'api::hotel.hotel': ApiHotelHotel;
       'api::resa.resa': ApiResaResa;
+      'api::single-type.single-type': ApiSingleTypeSingleType;
     }
   }
 }

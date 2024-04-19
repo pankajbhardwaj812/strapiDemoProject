@@ -20,23 +20,16 @@
     "About": {
       "type": "string"
     },
-    "Number": {
-      "type": "string",
-      "required": true,
-      "unique": true,
-      "minLength": 8,
-      "maxLength": 12
-    },
     "Hotelimg": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     }
   }
 }

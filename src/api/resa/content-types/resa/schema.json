@@ -16,21 +16,19 @@
       "type": "string"
     },
     "Restaurantno": {
-      "type": "integer",
-      "unique": true,
-      "min": 8,
-      "max": 12
+      "type": "biginteger",
+      "unique": true
     },
     "Restaurantimg": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     },
     "Description": {
       "type": "string",
