@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_buy_buycars",
+  "info": {
+    "displayName": "buybutton",
+    "icon": "car",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ButtonName": {
+      "type": "string",
+      "required": true
+    },
+    "backgroundColor": {
+      "type": "string",
+      "required": true
+    },
+    "TextColor": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "width": {
+      "type": "string"
+    }
+  }
+}

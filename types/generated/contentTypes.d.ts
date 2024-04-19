@@ -841,6 +841,7 @@ export interface ApiCarCar extends Schema.CollectionType {
       }>;
     Carimg: Attribute.Media & Attribute.Required;
     Type: Attribute.Enumeration<['Sedan ', 'Hatchback', 'Suv']>;
+    buycar: Attribute.Component<'buy.buycar'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

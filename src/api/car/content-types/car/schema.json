@@ -41,6 +41,12 @@
         "Hatchback",
         "Suv"
       ]
+    },
+    "buycar": {
+      "displayName": "buycar",
+      "type": "component",
+      "repeatable": false,
+      "component": "buy.buycar"
     }
   }
 }
